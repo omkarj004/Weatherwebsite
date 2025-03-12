@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .navbar h2 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            transition: 0.3s;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 120px auto 50px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h2>Weather App</h2>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="index.html">Weather</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>About This Weather App</h1>
+        <p>Welcome to the Weather App! This application provides a 7-day weather forecast for any city you search for. It utilizes real-time weather data from OpenWeatherMap API to ensure accurate and up-to-date information.</p>
+        <p>Our goal is to offer a simple, user-friendly interface that allows users to quickly access weather updates, including temperature, humidity, and conditions.</p>
+        <p>Developed with modern web technologies, this app ensures a seamless and visually appealing experience. Thank you for using our weather forecasting tool!</p>
+    </div>
+</body>
+</html>

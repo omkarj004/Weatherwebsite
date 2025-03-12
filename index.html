@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Weather Forecast</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #000428, #004e92);
+            text-align: center;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Background Animation */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://source.unsplash.com/1600x900/?sky,clouds') no-repeat center/cover;
+            opacity: 0.4;
+            filter: blur(3px);
+            z-index: -1;
+        }
+
+        /* Floating Animated Elements */
+        .floating {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            border-radius: 50%;
+            animation: float 6s infinite alternate ease-in-out;
+        }
+
+        .floating:nth-child(1) { top: 10%; left: 15%; animation-duration: 7s; }
+        .floating:nth-child(2) { top: 50%; left: 80%; animation-duration: 5s; width: 70px; height: 70px; }
+        .floating:nth-child(3) { top: 80%; left: 25%; animation-duration: 6s; width: 40px; height: 40px; }
+
+        @keyframes float {
+            from { transform: translateY(0); }
+            to { transform: translateY(-20px); }
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 20px;
+            font-weight: bold;
+            transition: 0.3s;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+
+        .navbar a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            color: #feb47b;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.15);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        p {
+            font-size: 20px;
+            margin-bottom: 25px;
+            font-weight: 300;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Animated Button */
+        .btn {
+            padding: 15px 40px;
+            font-size: 20px;
+            color: white;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            width: 300%;
+            height: 300%;
+            top: 50%;
+            left: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%) rotate(45deg);
+            transition: 0.5s;
+            opacity: 0;
+        }
+
+        .btn:hover::before {
+            width: 120%;
+            height: 120%;
+            opacity: 0.3;
+        }
+
+        .btn:hover {
+            background: linear-gradient(to right, #feb47b, #ff7e5f);
+            transform: translateY(-3px);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Floating Elements -->
+    <div class="floating"></div>
+    <div class="floating"></div>
+    <div class="floating"></div>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="home.html">Weather</a>
+       
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Welcome to the Weather Forecast</h1>
+        <p>Get real-time weather updates for any city worldwide with stunning visuals.</p>
+        <a href="index.html" class="btn">Check Weather</a>
+    </div>
+</body>
+</html>
